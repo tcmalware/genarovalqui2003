@@ -4,9 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo02</title>
+    <script>
+        function mostrardatos()
+        {
+            //traer los datos a la funcion
+            let categoria=document.getElementById("categoria").value;
+            let hijos=document.getElementById("hijos").value;
+            let condicion=document.getElementById("condicion").value;
+        if (categoria=="a"){
+        sueldobruto=2350;
+        }
+        else if (categoria=="b"){
+        sueldobruto=2000;
+        }
+        else if (categoria=="c"){
+        sueldobruto=1850;
+        }
+        else if (categoria=="d"){
+        sueldobruto=1500;
+        }
+        if (hijos>3){
+            bonihijos=3*25;
+            hijosextra=hijos-3;
+            bonihijosx=hijosextra*10;
+            bonihijosp=bonihijos+bonihijosx;
+        }
+        else{
+                bonihijosp=hijos*25;
+        }
+        if (condicion=="contratado"){
+                bonilab=0.10*sueldobruto;
+        }
+        else if (condicion=="nombrado"){
+                bonilab=0.15*sueldobruto;
+        }
+        bonitotal=bonilab+bonihijosp;
+
+        //mostrar los datos de java script a html
+        document.registro.bonificaciónpornúmerodehijos.value=bonihijosp;
+        document.registro.bonificaciónporcondiciónlaboral.value=bonilab;
+        document.registro.bonificacióntotal.value=bonitotal;
+        }
+    </script>
 </head>
 <body>
     <h1>Desarrollo 02</01>
     <p><a href="index.html">Regresar al principal</a><p>
+    <!--Crear un formulario-->
+    <form action="" name="registro">
+        <table border="1" align=center>
+            <tr>
+                <td>condicion</td>
+                <td><input type="text" name="condicion" id="condicion"></td>
+            </tr>
+            <tr>
+                <td>hijos</td>
+                <td><input type="text" name="hijos" id="hijos"></td>
+            </tr>
+            <tr>
+                <td>categoria</td>
+                <td><input type="text" name="categoria" id="categoria"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn1" value="Enviar Datos" onclick="mostrardatos()"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table border="1" align=center>
+            <tr>
+                <td>bonificación por número de hijos</td>
+                <td><input type="text" name="bonificaciónpornúmerodehijos" id="bonificaciónpornúmerodehijos"></td>
+            </tr>
+            <tr>
+                <td>bonificación por condición laboral</td>
+                <td><input type="text" name="bonificaciónporcondiciónlaboral" id="bonificaciónporcondiciónlaboral"></td>
+            </tr>
+            <tr>
+                <td>bonificación total</td>
+                <td><input type="text" name="bonificacióntotal" id="bonificacióntotal"></td>
+            </tr>
+        </table>
+
+    </form>
+    <br>
+
 </body>
 </html>

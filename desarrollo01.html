@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo01</title>
+    <script>
+        function mostrardatos()
+        {
+            //traer los datos a la funcion
+            let prom=document.getElementById("promedio").value;
+        if(prom>=17){
+            categoria="La categoría es A"
+        }
+        else if(prom>=14){
+            categoria="La categoría es B"
+        }
+        else if (prom>=12){
+            categoria="La categoría es C"
+        }
+        else if (prom<12){
+            categoria="La categoría es D"
+        }
+
+            //mostrar los datos de java script a html
+            document.registro.mostrarCategoria.value=categoria;
+        }
+    </script>
 </head>
 <body>
     <h1>Desarrollo 01</01>
     <p><a href="index.html">Regresar al principal</a><p>
+    <!--Crear un formulario-->
+    <form action="" name="registro">
+        <table border="1" align=center>
+            <tr>
+                <td>Promedio</td>
+                <td><input type="text" name="promedio" id="promedio"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn1" value="Enviar Datos" onclick="mostrardatos()"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table border="1" align=center>
+            <tr>
+                <td>Categoria</td>
+                <td><input type="text" name="mostrarCategoria" id="mostrarCategoria"></td>
+            </tr>
+        </table>
+
+    </form>
+    <br>
+
 </body>
 </html>

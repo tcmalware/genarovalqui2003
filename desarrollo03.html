@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo03</title>
+    <script>
+        function mostrardatos()
+        {
+            //traer los datos a la funcion
+            let impvendido=document.getElementById("importe vendido").value;
+            let hijos=document.getElementById("hijos").value;
+
+            sueldobasico=600;
+			bonificacion=50*hijos;
+			comision=(0.075*impvendido)+bonificacion;
+			sueldobruto=sueldobasico+comision;
+			descuento=0.11*sueldobruto;
+			sueldoneto=sueldobruto-descuento;
+        //mostrar los datos de java script a html
+        document.registro.mostrarcomision.value=comision;
+        document.registro.mostrarbonificacion.value=bonificacion;
+        document.registro.mostrarsueldobruto.value=sueldobruto;
+        document.registro.mostrardescuento.value=descuento;
+        document.registro.mostrarsueldoneto.value=sueldoneto;
+        }
+    </script>
 </head>
 <body>
     <h1>Desarrollo 03</01>
     <p><a href="index.html">Regresar al principal</a><p>
+    <!--Crear un formulario-->
+    <form action="" name="registro">
+        <table border="1" align=center>
+            <tr>
+                <td>importe vendido</td>
+                <td><input type="text" name="importe vendido" id="importe vendido"></td>
+            </tr>
+            <tr>
+                <td>hijos</td>
+                <td><input type="text" name="hijos" id="hijos"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="btn1" value="Enviar Datos" onclick="mostrardatos()"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table border="1" align=center>
+            <tr>
+                <td>comision</td>
+                <td><input type="text" name="mostrarcomision" id="mostrarcomision"></td>
+            </tr>
+            <tr>
+                <td>bonificacion</td>
+                <td><input type="text" name="mostrarbonificacion" id="mostrarbonificacion"></td>
+            </tr>
+            <tr>
+                <td>sueldo bruto</td>
+                <td><input type="text" name="mostrarsueldobruto" id="mostrarsueldobruto"></td>
+            </tr>
+            <tr>
+                <td>descuento</td>
+                <td><input type="text" name="mostrardescuento" id="mostrardescuento"></td>
+            </tr>
+            <tr>
+                <td>sueldoneto</td>
+                <td><input type="text" name="mostrarsueldoneto" id="mostrarsueldoneto"></td>
+            </tr>
+        </table>
+
+    </form>
+    <br>
 </body>
 </html>
