@@ -22,4 +22,10 @@ body{
     padding-top: 200px;
     padding-bottom: 200px;
 }
-
+.form-register{
+    font-family: verdana;
+    font-size: 15px;
+    text-align: center;
+    background-color: rgb(81, 158, 81);
+    height: 40px;
+}
